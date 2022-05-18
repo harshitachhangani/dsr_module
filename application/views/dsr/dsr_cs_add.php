@@ -30,9 +30,9 @@ if ($this->session->flashdata('msg')) {
                 <span><i class="icon icon-user"></i></span>
             </div>-->
             <div class="form-group">
-                <input type="text" class="form-control item" name="Oraganization_ID" id="Oraganization_ID" placeholder="Institute Code">
+                <input type="text" class="form-control item" name="Oraganization_ID" id="Oraganization_ID" placeholder="Institute Code ">
                 <?php echo form_error('Oraganization_ID');?>
-
+<!-- Hello.....    -->
             </div>
             <div class="form-group">
                 <input type="text" class="form-control item" name="DSR_no" id="DSR_no" placeholder="DSR No.">
