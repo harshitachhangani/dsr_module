@@ -46,7 +46,17 @@
     echo '
                             <script>alert("' . $this->session->flashdata('msg') . '");</script>';
   }
-  ?>
+  
+if ($this->session->flashdata('newMsg')) {
+  echo '
+                          <script>alert("' . $this->session->flashdata('newMsg') . '");</script>';
+}
+
+if ($this->session->flashdata('addProduct')) {
+  echo '
+                          <script>alert("' . $this->session->flashdata('addProduct') . '");</script>';
+}
+?>
 
   <div>
     <table align="left">

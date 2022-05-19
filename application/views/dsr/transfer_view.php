@@ -25,7 +25,7 @@
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control item" name= "qty_transfer" id="qty_transfer" placeholder="Quantity To Be Transfered">
+                <input type="text" class="form-control item" name= "qty_transfer" id="qty_transfer" placeholder="Quantity To Be Transfered" autocomplete="off">
                 <?php echo form_error('qty_distributed');?>
 
             </div>
@@ -33,7 +33,7 @@
             
 
             <div class="form-group">
-                <input type="date" class="form-control item" name= "transfer_date" id="transfer_date" placeholder="Date of Distributed">
+                <input type="date" class="form-control item" name= "transfer_date" id="transfer_date" placeholder="Date of Distributed" autocomplete="off">
                 <?php echo form_error('date_distributed');?>
 
             </div>
@@ -86,7 +86,7 @@
 
             </div>
             <div class="form-group">
-                <textarea type="text" class="form-control item" name= "msg" id="msg" placeholder="Message"></textarea>
+                <textarea type="text" class="form-control item" name= "msg" id="msg" placeholder="Message" autocomplete="off"></textarea>
                 <?php echo form_error('msg');?>
             </div>
             

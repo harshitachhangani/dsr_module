@@ -43,7 +43,7 @@ if ($this->session->flashdata('msg')) {
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control item" name= "qty_distributed" id="qty_distributed" placeholder="Quantity to be Distributed">
+                <input type="text" class="form-control item" name= "qty_distributed" id="qty_distributed" placeholder="Quantity to be Distributed" autocomplete="off">
                 <?php echo form_error('qty_distributed');?>
 
             </div>
@@ -55,7 +55,7 @@ if ($this->session->flashdata('msg')) {
             </div>-->
 
             <div class="form-group">
-                <input type="date" class="form-control item" name= "date_distributed" id="date_distributed" placeholder="Date of Distributed">
+                <input type="date" class="form-control item" name= "date_distributed" id="date_distributed" placeholder="Date of Distributed" autocomplete="off">
                 <?php echo form_error('date_distributed');?>
 
             </div>

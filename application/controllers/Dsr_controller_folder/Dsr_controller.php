@@ -145,7 +145,8 @@ class Dsr_controller extends CI_Controller
 
 					$response = $this->Dsr_model->add_cs($data);
 					if ($response == true) {
-						echo "Records Saved Successfully";
+						//echo "Records Saved Successfully";
+						$this->session->set_flashdata('addProduct', 'Product Added Successfully');
 						redirect(base_url() . 'index.php/Dsr_controller_folder/Dsr_controller/dsr_cs');
 					} else {
 						echo "Insert error !";
@@ -209,7 +210,8 @@ class Dsr_controller extends CI_Controller
 
 						$response = $this->Dsr_model->update_quantity($newQtyDistributed);
 						if ($response == true) {
-							redirect(base_url() . 'index.php/Dsr_controller_folder/Dsr_controller/dsr_cs_distribute_view');
+							$this->session->set_flashdata('newMsg', 'Product Distributed Successfully');
+							redirect(base_url() . 'index.php/Dsr_controller_folder/Dsr_controller/dsr_cs');
 						} else {
 							echo "Insert error !";
 						}
@@ -309,5 +311,13 @@ class Dsr_controller extends CI_Controller
 		} else {
 			redirect(base_url() . 'index.php/Dsr_controller_folder/Dsr_controller/dsr_cs_distribute_items?product_id=' . $a . '&product_name='.$productName.'');
 		}
+	}
+
+	function display_dept_dsr()
+	{
+		$this->load->view('dsr/display_dept_dsr');
+		$this->load->model('Dsr_model');
+
+
 	}
 }

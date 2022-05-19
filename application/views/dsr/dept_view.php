@@ -42,7 +42,15 @@
           </br>
 <div><table align = "right">
 <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Request Product</button></td>
-<td><td>
+<td></td>
+<td>
+              <form action='<?php echo base_url() . "index.php/Dsr_controller_folder/Dsr_controller/display_dept_dsr" ?>' method="post">
+                <button type="submit" class="btn btn-primary btn-lg active float-right" role="button" aria-pressed="true">View DSR Report</button>
+              </form>
+            </td>
+
+          </a>
+
         <td><td>
         <td><td>
         <td><td>
@@ -60,7 +68,7 @@
         <form method="post" action="" enctype="multipart/formdata">
         <div class="form-group">
             <label for="recipient-name" class="col-form-label">From:</label>
-            <input class="form-control" name="msg_from" id="msg_from" ></input>
+            <input class="form-control" name="msg_from" id="msg_from" autocomplete="off" ></input>
           </div>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Recipient:</label>
@@ -84,11 +92,11 @@
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" name="message" id="message"></textarea>
+            <textarea class="form-control" name="message" id="message" autocomplete="off"></textarea>
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Details:</label>
-            <textarea class="form-control" name="view_details" id="view_details"></textarea>
+            <textarea class="form-control" name="view_details" id="view_details" autocomplete="off"></textarea>
           </div>
 
           
@@ -96,14 +104,18 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" value="submit" name="submit" id="submit">Send Request</button>
+        <button type="submit" onclick="myFunction()" class="btn btn-primary" value="submit" name="submit" id="submit">Send Request</button>
       </div>
       </form>
     </div>
   </div>
 </div>
 
-
+<script>
+        function myFunction() {
+            alert("Request Sent Successfully");
+        }
+        </script>
 
 </br>
             <div class="container"> 

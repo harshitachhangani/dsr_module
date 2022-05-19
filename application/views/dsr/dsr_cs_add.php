@@ -30,12 +30,12 @@ if ($this->session->flashdata('msg')) {
                 <span><i class="icon icon-user"></i></span>
             </div>-->
             <div class="form-group">
-                <input type="text" class="form-control item" name="Oraganization_ID" id="Oraganization_ID" placeholder="Institute Code ">
+                <input type="text" class="form-control item" name="Oraganization_ID" id="Oraganization_ID" placeholder="Institute Code " autocomplete="off">
                 <?php echo form_error('Oraganization_ID');?>
    <!-- Hello.....    -->
             </div>
             <div class="form-group">
-                <input type="text" class="form-control item" name="DSR_no" id="DSR_no" placeholder="DSR No.">
+                <input type="text" class="form-control item" name="DSR_no" id="DSR_no" placeholder="DSR No." autocomplete="off">
                 <?php echo form_error('DSR_no');?>
 
             </div>
@@ -45,14 +45,14 @@ if ($this->session->flashdata('msg')) {
 
             </div>-->
             <div class="form-group">
-                <input type="date" class="form-control item" name="purchase_date" id="purchase_date" placeholder="Purchase Date">
+                <input type="date" class="form-control item" name="purchase_date" id="purchase_date" placeholder="Purchase Date" autocomplete="off">
                 <?php echo form_error('purchase_date');?>
 
             </div>
            
             <div class="form-group">
             <label>&nbsp &nbsp Choose Authority</label>
-                      <select  class="form-control item" name="purchase_authority" id="purchase_authority" placeholder="Choose Authority" >
+                      <select  class="form-control item" name="purchase_authority" id="purchase_authority" placeholder="Choose Authority" autocomplete="off">
                       <option value="select">--select--</option>
                       <option value="Principal">Principal</option>
                         <option value="DTE">DTE</option>
@@ -63,37 +63,37 @@ if ($this->session->flashdata('msg')) {
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control item" name="supplier_name" id="supplier_name" placeholder="Supplier Name">
+                <input type="text" class="form-control item" name="supplier_name" id="supplier_name" placeholder="Supplier Name" autocomplete="off">
                 <?php echo form_error('supplier_name');?>
 
             </div>
 
             <div class="form-group">
-                <textarea class="form-control item" name="Supplier_Address" id="Supplier_Address" placeholder="Supplier Address" name="supp_addr" rows="2" cols="50"></textarea>
+                <textarea class="form-control item" name="Supplier_Address" id="Supplier_Address" placeholder="Supplier Address" name="supp_addr" autocomplete="off" rows="2" cols="50"></textarea>
                 <?php echo form_error('Supplier_Address');?>
 
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control item" name="product_name" id="product_name" placeholder="Product Name">
+                <input type="text" class="form-control item" name="product_name" id="product_name" placeholder="Product Name" autocomplete="off">
                 <?php echo form_error('product_name');?>
 
             </div>
 
             <div class="form-group">
-                <textarea class="form-control item" name="product_desc" id="product_desc" placeholder="Product Discription" name="product_desc" rows="2" cols="50"></textarea>
+                <textarea class="form-control item" name="product_desc" id="product_desc" placeholder="Product Discription" name="product_desc" rows="2" cols="50" autocomplete="off"></textarea>
                 <?php echo form_error('product_desc');?>
 
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control item" name="qty"  id="qty" placeholder="Quantity">
+                <input type="text" class="form-control item" name="qty"  id="qty" placeholder="Quantity" autocomplete="off">
                 <?php echo form_error('qty');?>
 
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control item" name="Price_Per_Quantity" id="Price_Per_Quantity" placeholder="Price Per Quantity">
+                <input type="text" class="form-control item" name="Price_Per_Quantity" id="Price_Per_Quantity" placeholder="Price Per Quantity" autocomplete="off">
                 <?php echo form_error('Price_Per_Quantity');?>
 
             </div>
@@ -128,7 +128,7 @@ if ($this->session->flashdata('msg')) {
             </div>
 
             <div class="form-group">
-                <textarea class="form-control item" name="remarks" id="remarks" placeholder="Remarks" name="product_desc" rows="2" cols="50"></textarea>
+                <textarea class="form-control item" name="remarks" id="remarks" placeholder="Remarks" name="product_desc" rows="2" cols="50" autocomplete="off"></textarea>
 
             </div>
 
