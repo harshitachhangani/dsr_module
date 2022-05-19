@@ -59,6 +59,40 @@ class Dsr_model extends CI_Model {
       return $purchaseDate;
     }
 
+    public function get_qtyRemaining(){
+      $productID = $_GET['product_id'];
+      
+      $this->db->select("qty_remaining");
+      $this->db->from("master_cs");
+      $this->db->where('Product_ID', $productID);
+      $que = $this->db->get();
+  
+        foreach ($que->result('Dsr_model') as $user)
+        {
+                $qtyRemaining = $user->qty_remaining; // access attributes   
+        }
+  
+        return $qtyRemaining;
+      }
+
+      public function get_qty(){
+        $productID = $_GET['product_id'];
+        
+        $this->db->select("qty");
+        $this->db->from("master_cs");
+        $this->db->where('Product_ID', $productID);
+        $que = $this->db->get();
+    
+          foreach ($que->result('Dsr_model') as $user)
+          {
+                  $qty = $user->qty; // access attributes   
+          }
+    
+          return $qty;
+        }
+
+
+
   function dsr_cs_distribute_items($data)
   {
     $this->db->insert('cs_distribution' , $data);   

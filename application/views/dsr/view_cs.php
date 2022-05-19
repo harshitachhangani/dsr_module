@@ -99,7 +99,7 @@
             <th>Quantity</th>
             <th>Price Per Quantity</th>
             <th>Price</th>
-            <th>Initial HOD</th>
+           <!-- <th>Initial HOD</th> -->
             <th>Qty Distributed</th>
             <th>Qty Remaining</th>
             <th>Remarks</th>
@@ -118,13 +118,14 @@
             echo "<td>" . $row->purchase_date . "</td>";
             echo "<td>" . $row->purchase_authority . "</td>";
             echo "<td>" . $row->supplier_name . "</td>";
-            echo "<td>" . $row->product_name . "</td>";
+            $productName = $row->product_name;
+            echo "<td>" . $productName . "</td>";
             echo "<td>" . $row->product_desc . "</td>";
             $qty = $row->qty;
             echo "<td>" . $qty . "</td>";
             echo "<td>" . $row->Price_Per_Quantity . "</td>";
             echo "<td>" . $row->price . "</td>";
-            echo "<td>" . $row->initial_HOD . "</td>";
+            //echo "<td>" . $row->initial_HOD . "</td>";
             $qtyDistributed = $row->Quantity_Distributed;
             echo "<td>" . $qtyDistributed . "</td>";
             echo "<td>" . $row->qty_remaining . "</td>";
@@ -135,6 +136,7 @@
             <td>
               <form action='<?php echo base_url() . "index.php/Dsr_controller_folder/Dsr_controller/handle_distribute" ?>' method="post">
                 <input type="hidden" name="a" value=' <?php echo $a ?>'>
+                <input type="hidden" name="productName" value=' <?php echo $productName ?>'>
                 <input type="hidden" name="qty" value='<?php echo $qty ?>'>
                 <input type="hidden" name="qty_distributed" value='<?php echo $qtyDistributed ?>'>
                 <button type="submit" class="btn btn-primary btn-lg active float-right" role="button" aria-pressed="true">DISTRIBUTE</button>

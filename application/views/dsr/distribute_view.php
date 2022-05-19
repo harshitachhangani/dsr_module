@@ -47,6 +47,7 @@
                 <thead class="thead-dark">
                  <tr>
                         <th scope="col">Product ID</th>
+                        <th scope="col">Product Name</th>
                         <th scope="col">Quantity Distributed</th>
                         <!--<th scope="col">Quantity Remaining</th>-->
                         <th scope="col">Date Distributed</th>
@@ -60,6 +61,7 @@
   {
  
   echo "<td>".$row->Product_ID."</td>";
+  echo "<td>".$row->product_name."</td>";
   echo "<td>".$row->qty_distributed."</td>";
   //echo "<td>".$row->qty_remaining."</td>";
   echo "<td>".$row->date_distributed."</td>";

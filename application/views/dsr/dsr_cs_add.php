@@ -32,7 +32,7 @@ if ($this->session->flashdata('msg')) {
             <div class="form-group">
                 <input type="text" class="form-control item" name="Oraganization_ID" id="Oraganization_ID" placeholder="Institute Code ">
                 <?php echo form_error('Oraganization_ID');?>
-<!-- Hello.....    -->
+   <!-- Hello.....    -->
             </div>
             <div class="form-group">
                 <input type="text" class="form-control item" name="DSR_no" id="DSR_no" placeholder="DSR No.">
@@ -98,7 +98,7 @@ if ($this->session->flashdata('msg')) {
 
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
             <label>&nbsp &nbsp Initial of HOD</label>
                 <select name="initial_HOD" class="form-control item" name="initial_HOD" id="initial_HOD" placeholder="Initial Of HOD">
                     <option value="select">--select--</option>
@@ -117,12 +117,12 @@ if ($this->session->flashdata('msg')) {
                     <option value="Library">Library</option>
 
                   </select>
-                  <?php echo form_error('initial_HOD');?>
+                  <?php //echo form_error('initial_HOD');?>
 
-            </div>
+            </div> -->
 
             <div class="form-group">
-                <input type="text" class="form-control item" name="Quantity_Distributed" id="Quantity_Distributed" placeholder="Quantity Distributed">
+                <input type="text" class="form-control item" name="Quantity_Distributed" id="Quantity_Distributed" placeholder="Quantity Distributed" value="0" readonly>
                 <?php echo form_error('Quantity_Distributed');?>
 
             </div>

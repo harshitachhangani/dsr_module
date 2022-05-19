@@ -37,6 +37,12 @@ if ($this->session->flashdata('msg')) {
             </div>
 
             <div class="form-group">
+                <input type="text" class="form-control item" name= "product_name" id="product_name" placeholder="Product Name" value="<?php echo $_GET['product_name'];?>" readonly>
+                <?php //echo form_error('qty_distributed');?>
+
+            </div>
+
+            <div class="form-group">
                 <input type="text" class="form-control item" name= "qty_distributed" id="qty_distributed" placeholder="Quantity to be Distributed">
                 <?php echo form_error('qty_distributed');?>
 
