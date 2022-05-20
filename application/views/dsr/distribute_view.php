@@ -38,7 +38,7 @@
 </table>
 </div>
             <div class="container"> 
-               <center> <h1>Welcome to Distribution Details</h1> </center>
+               <center> <h1>Central Store Distribution Details</h1> </center>
             </div>
         </div>
 </br></br>

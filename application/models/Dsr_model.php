@@ -151,6 +151,17 @@ class Dsr_model extends CI_Model {
     return true;
   }
 
+  function get_dsr_report()
+  {
+    $d = $_GET['dept'];
+      $this->db->select("*");
+      $this->db->from("cs_distribution");
+      $this->db->where('head_initials', $d);
+      $query = $this->db->get();
+      return $query->result();
+
+  }
+
 }
   
 ?>

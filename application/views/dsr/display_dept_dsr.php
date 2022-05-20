@@ -13,9 +13,36 @@
   <body>
 </br>
 </br>
+<?php $m = $_GET['dept']; ?>
     <center><h3>Government Polytechnic Amravati</h3></center>
-    <center><h4>----------------------------- Computer Department DSR Report -----------------------------</h4></center>
-    
+    <div class="container"> 
+               <center> <h4><?php 
+               
+               if(isset($_GET['dept'])): 
+               $d = $_GET['dept']; 
+               echo "----------------------------- " . $d . " DSR Report ----------------------------- "; 
+               endif; 
+               ?></h4> </center>
+            </div>
+    <!-- <center><h4>----------------------------- Computer Department DSR Report -----------------------------</h4></center> -->
+    <hr>
+    <?php
+  $i=1;
+  foreach($data as $show)
+  {
+ 
+ //echo "<td>".$row->Product_ID."</td>";
+  $a=$show->Product_ID;
+  echo "<h6>&nbsp &nbsp &nbsp Product ID: ".$a."</br>";
+  echo "&nbsp &nbsp &nbsp Product Name: ".$show->product_name."</br>";
+  echo "&nbsp &nbsp &nbsp Quantity Available: ".$show->qty_distributed."</br>";
+  //echo "<td>".$row->qty_remaining."</td>";
+  echo "&nbsp &nbsp &nbsp Date Distribution: ".$show->date_distributed."</br>";
+  echo "&nbsp &nbsp &nbsp Head Initial: ".$show->head_initials."</br></h6>";
+  echo "<hr>";
+  $i++;
+}
+  ?>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

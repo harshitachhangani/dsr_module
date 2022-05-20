@@ -40,16 +40,20 @@
 </div>
     </br>
           </br>
-<div><table align = "right">
-<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Request Product</button></td>
-<td></td>
-<td>
-              <form action='<?php echo base_url() . "index.php/Dsr_controller_folder/Dsr_controller/display_dept_dsr" ?>' method="post">
+          <div>
+            <table align = "right">
+          <td></td>
+          <?php $m = $_GET['dept']; ?>
+        <td>
+              <form action='<?php echo base_url() . "index.php/Dsr_controller_folder/Dsr_controller/display_dept_dsr?dept=".$m."" ?>' method="post">
                 <button type="submit" class="btn btn-primary btn-lg active float-right" role="button" aria-pressed="true">View DSR Report</button>
               </form>
             </td>
-
-          </a>
+            </table>
+          </div>
+<div><table align = "right">
+<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Request Product</button></td>
+<td></td>
 
         <td><td>
         <td><td>

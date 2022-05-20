@@ -210,7 +210,7 @@ class Dsr_controller extends CI_Controller
 				} else if ($qtyDistributed > $qty) {
 					//echo "qty distributed error 2";
 					$this->session->set_flashdata('qtyDistributeError', "Quantity Distributed Should not be greater than tatal Quantity");
-				} else if ($qtyDistributed >= $qtyRemaining) {
+				} else if ($qtyDistributed > $qtyRemaining) {
 					//echo "remaining qty error 3";
 					$this->session->set_flashdata('remainingError', "Quantity Distributed Should not be greater than remaining Quantity");
 				} 
@@ -248,7 +248,7 @@ class Dsr_controller extends CI_Controller
 
 		$this->load->model('Dsr_model');
 
-		// $this -> form_validation -> set_rules('Product_ID' ,'Product ID' ,'required|integer');
+		//$this -> form_validation -> set_rules('Product_ID' ,'Product ID' ,'required|integer');
 		//$this -> form_validation -> set_rules('qty_transferr' ,'Quantity to be Transfered' ,'required|integer');
 		//$this -> form_validation -> set_rules('transfer_date' ,'Date Transfered' ,'required');
 		//$this -> form_validation -> set_rules('transfer_to' ,'Transfer To' ,'required');
@@ -321,7 +321,7 @@ class Dsr_controller extends CI_Controller
 		if ($qty_distributed == $qty) {
 			// echo base_url().'index.php/Dsr_controller_folder/Dsr_controller/dsr_cs';
 			$this->session->set_flashdata('msg', 'Cannot Distribute Quantity out of Stock!');
-			// echo "Hi Ayush!!";
+			
 			$url = base_url() . "index.php/Dsr_controller_folder/Dsr_controller/dsr_cs";
 			redirect($url);
 		} else {
@@ -331,7 +331,10 @@ class Dsr_controller extends CI_Controller
 
 	function display_dept_dsr()
 	{
-		$this->load->view('dsr/display_dept_dsr');
+		//$this->load->view('dsr/display_dept_dsr');
 		$this->load->model('Dsr_model');
+
+		$result['data'] = $this->Dsr_model->get_dsr_report();
+		$this->load->view('dsr/display_dept_dsr', $result);
 	}
 }
