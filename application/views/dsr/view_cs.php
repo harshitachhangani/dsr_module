@@ -47,9 +47,9 @@
                             <script>alert("' . $this->session->flashdata('msg') . '");</script>';
   }
   
-if ($this->session->flashdata('newMsg')) {
+if ($this->session->flashdata('productDistributedg')) {
   echo '
-                          <script>alert("' . $this->session->flashdata('newMsg') . '");</script>';
+                          <script>alert("' . $this->session->flashdata('productDistributed') . '");</script>';
 }
 
 if ($this->session->flashdata('addProduct')) {

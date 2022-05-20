@@ -12,17 +12,18 @@
 <body>
 <?php
 
-if ($this->session->flashdata('msg')) {
+if ($this->session->flashdata('date')) {
     echo '
         <div class="container">
             <div class="alert alert-danger">
-                ' . $this->session->flashdata("msg") . '
+                ' . $this->session->flashdata("date") . '
             </div>
         </div>
         ';
 }
 ?>
     <div class="registration-form">
+       
         
         <form method="post" action="" enctype="multipart/formdata">
            <center><h3> ADD PRODUCT DETAILS </h3></center> </br>

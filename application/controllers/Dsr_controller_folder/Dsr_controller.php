@@ -117,6 +117,7 @@ class Dsr_controller extends CI_Controller
 		$this->form_validation->set_rules('Quantity_Distributed', 'Quantity Distributed', 'required|integer');
 
 
+		
 		/* $this->form_validation->set_rules('qty_remaining','Quantity Remaining','required|integer');*/
 		if ($this->form_validation->run() == false) {
 			$this->load->view('dsr/dsr_cs_add');
@@ -126,7 +127,8 @@ class Dsr_controller extends CI_Controller
 				$data['Oraganization_ID'] = $this->input->post('Oraganization_ID');
 				$data['DSR_no'] = $this->input->post('DSR_no');
 				//$data['Product_ID'] = $this->input->post('Product_ID');
-				$data['purchase_date'] = $this->input->post('purchase_date');
+				$purchaseDate = $this->input->post('purchase_date');
+				$data['purchase_date'] = $purchaseDate;
 				$data['purchase_authority'] = $this->input->post('purchase_authority');
 				$data['supplier_name'] = $this->input->post('supplier_name');
 				$data['Supplier_Address'] = $this->input->post('Supplier_Address');
@@ -140,8 +142,9 @@ class Dsr_controller extends CI_Controller
 				$data['Quantity_Distributed'] = $qtyDistributed;
 				$data['remarks'] = $this->input->post('remarks');
 
+				$curDate = date("Y-m-d");
 
-				if ($qtyDistributed <= $qty) {
+				if ($purchaseDate <= $curDate) {
 
 					$response = $this->Dsr_model->add_cs($data);
 					if ($response == true) {
@@ -152,7 +155,7 @@ class Dsr_controller extends CI_Controller
 						echo "Insert error !";
 					}
 				} else {
-					$this->session->set_flashdata('msg', "Quantity Distributed should not be greater than total Qtantity...");
+					$this->session->set_flashdata('date', "Purchase date should not be after current date...");
 					redirect(base_url() . 'index.php/Dsr_controller_folder/Dsr_controller/dsr_cs_add');
 				}
 			}
@@ -180,6 +183,7 @@ class Dsr_controller extends CI_Controller
 		if ($this->form_validation->run() == false) {
 			$this->load->view('dsr/distribute_items');
 		} else {
+			//print_r($this->input->post());
 			if ($this->input->post('submit')) {
 
 				$a = $this->input->post('Product_ID');
@@ -203,14 +207,15 @@ class Dsr_controller extends CI_Controller
 				if ($dateDistributed < $purchaseDate) {
 					//echo "date error 2";
 					$this->session->set_flashdata('dateError', "Invalid Distribution date.....");
-					
 				} else if ($qtyDistributed > $qty) {
 					//echo "qty distributed error 2";
-					$this->session->set_flashdata('qtyDistributeError', "qtyDistributeError.....");
-				} else if ($qtyDistributed <= $qtyRemaining) {
+					$this->session->set_flashdata('qtyDistributeError', "Quantity Distributed Should not be greater than tatal Quantity");
+				} else if ($qtyDistributed >= $qtyRemaining) {
 					//echo "remaining qty error 3";
-					$this->session->set_flashdata('remainingError ', "remainingError....");
-				} else {
+					$this->session->set_flashdata('remainingError', "Quantity Distributed Should not be greater than remaining Quantity");
+				} 
+				else{
+					//print_r("Hi");
 					$response = $this->Dsr_model->dsr_cs_distribute_items($data);
 					if ($response == true) {
 
@@ -220,16 +225,21 @@ class Dsr_controller extends CI_Controller
 
 						$response = $this->Dsr_model->update_quantity($newQtyDistributed);
 						if ($response == true) {
-							$this->session->set_flashdata('newMsg', 'Product Distributed Successfully');
+							$this->session->set_flashdata('productDistributed', 'Product Distributed Successfully');
 							redirect(base_url() . 'index.php/Dsr_controller_folder/Dsr_controller/dsr_cs');
 						} else {
+
 							echo "Insert error !";
 						}
 					}
+					
 				}
+				
+
 				redirect(base_url() . 'index.php/Dsr_controller_folder/Dsr_controller/dsr_cs_distribute_items?product_id=' . $a . '&product_name='.$productName.'');
 			}
 		}
+		
 	}
 
 

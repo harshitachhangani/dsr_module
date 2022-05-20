@@ -39,6 +39,7 @@ if ($this->session->flashdata('remainingError')) {
         </div>
         ';
 }
+
 ?>
     
     <div class="registration-form">
