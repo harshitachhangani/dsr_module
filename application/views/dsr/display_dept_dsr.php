@@ -31,14 +31,14 @@
   foreach($data as $show)
   {
  
- //echo "<td>".$row->Product_ID."</td>";
+  //echo "<td>".$row->Product_ID."</td>";
   $a=$show->Product_ID;
-  echo "<h6>&nbsp &nbsp &nbsp Product ID: ".$a."</br>";
-  echo "&nbsp &nbsp &nbsp Product Name: ".$show->product_name."</br>";
-  echo "&nbsp &nbsp &nbsp Quantity Available: ".$show->qty_distributed."</br>";
+  echo "<h6><b>&nbsp &nbsp &nbsp Product ID: </b>".$a."</br>";
+  echo "<b>&nbsp &nbsp &nbsp Product Name: </b>".$show->product_name."</br>";
+  echo "<b>&nbsp &nbsp &nbsp Quantity Available: </b>".$show->qty_distributed."</br>";
   //echo "<td>".$row->qty_remaining."</td>";
-  echo "&nbsp &nbsp &nbsp Date Distribution: ".$show->date_distributed."</br>";
-  echo "&nbsp &nbsp &nbsp Head Initial: ".$show->head_initials."</br></h6>";
+  echo "<b>&nbsp &nbsp &nbsp Date Distribution: </b>".$show->date_distributed."</br>";
+  echo "<b>&nbsp &nbsp &nbsp Head Initial: </b>".$show->head_initials."</br></h6>";
   echo "<hr>";
   $i++;
 }
