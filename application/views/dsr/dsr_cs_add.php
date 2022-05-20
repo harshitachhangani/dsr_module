@@ -29,11 +29,13 @@ if ($this->session->flashdata('msg')) {
             <!--<div class="form-icon">
                 <span><i class="icon icon-user"></i></span>
             </div>-->
+            <label><b>&nbsp &nbsp Institute Code</b></label>
             <div class="form-group">
                 <input type="text" class="form-control item" name="Oraganization_ID" id="Oraganization_ID" placeholder="Institute Code " autocomplete="off">
                 <?php echo form_error('Oraganization_ID');?>
    <!-- Hello.....    -->
             </div>
+            <label><b>&nbsp &nbsp DSR No.</b></label>
             <div class="form-group">
                 <input type="text" class="form-control item" name="DSR_no" id="DSR_no" placeholder="DSR No." autocomplete="off">
                 <?php echo form_error('DSR_no');?>
@@ -44,6 +46,7 @@ if ($this->session->flashdata('msg')) {
                 <?php //echo form_error('Product_ID');?>
 
             </div>-->
+            <label><b>&nbsp &nbsp Purchase Date</b></label>
             <div class="form-group">
                 <input type="date" class="form-control item" name="purchase_date" id="purchase_date" placeholder="Purchase Date" autocomplete="off">
                 <?php echo form_error('purchase_date');?>
@@ -51,7 +54,7 @@ if ($this->session->flashdata('msg')) {
             </div>
            
             <div class="form-group">
-            <label>&nbsp &nbsp Choose Authority</label>
+            <label><b>&nbsp &nbsp Choose Authority<b></label>
                       <select  class="form-control item" name="purchase_authority" id="purchase_authority" placeholder="Choose Authority" autocomplete="off">
                       <option value="select">--select--</option>
                       <option value="Principal">Principal</option>
@@ -62,36 +65,42 @@ if ($this->session->flashdata('msg')) {
 
             </div>
 
+            <label><b>&nbsp &nbsp Supplier Name</b></label>
             <div class="form-group">
                 <input type="text" class="form-control item" name="supplier_name" id="supplier_name" placeholder="Supplier Name" autocomplete="off">
                 <?php echo form_error('supplier_name');?>
 
             </div>
 
+            <label><b>&nbsp &nbsp Supplier Address</b></label>
             <div class="form-group">
                 <textarea class="form-control item" name="Supplier_Address" id="Supplier_Address" placeholder="Supplier Address" name="supp_addr" autocomplete="off" rows="2" cols="50"></textarea>
                 <?php echo form_error('Supplier_Address');?>
 
             </div>
 
+            <label><b>&nbsp &nbsp Product Name</b></label>
             <div class="form-group">
                 <input type="text" class="form-control item" name="product_name" id="product_name" placeholder="Product Name" autocomplete="off">
                 <?php echo form_error('product_name');?>
 
             </div>
 
+            <label><b>&nbsp &nbsp Product Discription</b></label>
             <div class="form-group">
                 <textarea class="form-control item" name="product_desc" id="product_desc" placeholder="Product Discription" name="product_desc" rows="2" cols="50" autocomplete="off"></textarea>
                 <?php echo form_error('product_desc');?>
 
             </div>
 
+            <label><b>&nbsp &nbsp Quantity</b></label>
             <div class="form-group">
                 <input type="text" class="form-control item" name="qty"  id="qty" placeholder="Quantity" autocomplete="off">
                 <?php echo form_error('qty');?>
 
             </div>
 
+            <label><b>&nbsp &nbsp Price Per Quantity</b></label>
             <div class="form-group">
                 <input type="text" class="form-control item" name="Price_Per_Quantity" id="Price_Per_Quantity" placeholder="Price Per Quantity" autocomplete="off">
                 <?php echo form_error('Price_Per_Quantity');?>
@@ -121,12 +130,14 @@ if ($this->session->flashdata('msg')) {
 
             </div> -->
 
+            <label><b>&nbsp &nbsp Quantity Distributed</b></label>
             <div class="form-group">
                 <input type="text" class="form-control item" name="Quantity_Distributed" id="Quantity_Distributed" placeholder="Quantity Distributed" value="0" readonly>
                 <?php echo form_error('Quantity_Distributed');?>
 
             </div>
 
+            <label><b>&nbsp &nbsp Remarks</b></label>
             <div class="form-group">
                 <textarea class="form-control item" name="remarks" id="remarks" placeholder="Remarks" name="product_desc" rows="2" cols="50" autocomplete="off"></textarea>
 

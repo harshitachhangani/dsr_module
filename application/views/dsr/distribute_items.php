@@ -12,11 +12,29 @@
 <body>
 <?php
 
-if ($this->session->flashdata('msg')) {
+if ($this->session->flashdata('dateError')) {
     echo '
         <div class="container">
             <div class="alert alert-danger">
-                ' . $this->session->flashdata("msg") . '
+                ' . $this->session->flashdata("dateError") . '
+            </div>
+        </div>
+        ';
+}
+if ($this->session->flashdata('qtyDistributeError')) {
+    echo '
+        <div class="container">
+            <div class="alert alert-danger">
+                ' . $this->session->flashdata("qtyDistributeError") . '
+            </div>
+        </div>
+        ';
+}
+if ($this->session->flashdata('remainingError')) {
+    echo '
+        <div class="container">
+            <div class="alert alert-danger">
+                ' . $this->session->flashdata("remainingError") . '
             </div>
         </div>
         ';
@@ -30,18 +48,20 @@ if ($this->session->flashdata('msg')) {
             <!--<div class="form-icon">
                 <span><i class="icon icon-user"></i></span>
             </div>-->
-            <label>&nbsp &nbsp Product ID</label>
+            <label><b>&nbsp &nbsp Product ID</b></label>
             <div class="form-group">
                 <input type="text"  class="form-control item" name= "Product_ID" id="Product_ID" placeholder="Product ID" value="<?php echo $_GET['product_id'];?>" readonly>
 
             </div>
 
+            <label><b>&nbsp &nbsp Product Name</b></label>
             <div class="form-group">
                 <input type="text" class="form-control item" name= "product_name" id="product_name" placeholder="Product Name" value="<?php echo $_GET['product_name'];?>" readonly>
                 <?php //echo form_error('qty_distributed');?>
 
             </div>
 
+            <label><b>&nbsp &nbsp Quantity to be Distributed</b></label>
             <div class="form-group">
                 <input type="text" class="form-control item" name= "qty_distributed" id="qty_distributed" placeholder="Quantity to be Distributed" autocomplete="off">
                 <?php echo form_error('qty_distributed');?>
@@ -54,12 +74,14 @@ if ($this->session->flashdata('msg')) {
 
             </div>-->
 
+            <label><b>&nbsp &nbsp Date of Distributed</b></label>
             <div class="form-group">
                 <input type="date" class="form-control item" name= "date_distributed" id="date_distributed" placeholder="Date of Distributed" autocomplete="off">
                 <?php echo form_error('date_distributed');?>
 
             </div>
 
+            <label><b>&nbsp &nbsp Distribute to</b></label>
             <div class="form-group">
                 <select name="head_initials" class="form-control item"  id="head_initials">
                     <option value="Computer">Computer</option>

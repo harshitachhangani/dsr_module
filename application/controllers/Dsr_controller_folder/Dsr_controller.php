@@ -200,7 +200,17 @@ class Dsr_controller extends CI_Controller
 
 
 				$purchaseDate = $this->Dsr_model->get_date();
-				if ($dateDistributed >= $purchaseDate && $qtyDistributed <= $qty && $qtyDistributed <= $qtyRemaining ) {
+				if ($dateDistributed < $purchaseDate) {
+					//echo "date error 2";
+					$this->session->set_flashdata('dateError', "Invalid Distribution date.....");
+					
+				} else if ($qtyDistributed > $qty) {
+					//echo "qty distributed error 2";
+					$this->session->set_flashdata('qtyDistributeError', "qtyDistributeError.....");
+				} else if ($qtyDistributed <= $qtyRemaining) {
+					//echo "remaining qty error 3";
+					$this->session->set_flashdata('remainingError ', "remainingError....");
+				} else {
 					$response = $this->Dsr_model->dsr_cs_distribute_items($data);
 					if ($response == true) {
 
@@ -215,17 +225,13 @@ class Dsr_controller extends CI_Controller
 						} else {
 							echo "Insert error !";
 						}
-					} else {
-						echo "Insert error !";
 					}
-				} else {
-
-					$this->session->set_flashdata('msg', "Invalid Distribution date.....");
-					redirect(base_url() . 'index.php/Dsr_controller_folder/Dsr_controller/dsr_cs_distribute_items?product_id=' . $a . '&product_name='.$productName.'');
 				}
+				redirect(base_url() . 'index.php/Dsr_controller_folder/Dsr_controller/dsr_cs_distribute_items?product_id=' . $a . '&product_name='.$productName.'');
 			}
 		}
 	}
+
 
 	public function transfer_items()
 	{
@@ -309,7 +315,7 @@ class Dsr_controller extends CI_Controller
 			$url = base_url() . "index.php/Dsr_controller_folder/Dsr_controller/dsr_cs";
 			redirect($url);
 		} else {
-			redirect(base_url() . 'index.php/Dsr_controller_folder/Dsr_controller/dsr_cs_distribute_items?product_id=' . $a . '&product_name='.$productName.'');
+			redirect(base_url() . 'index.php/Dsr_controller_folder/Dsr_controller/dsr_cs_distribute_items?product_id=' . $a . '&product_name=' . $productName . '');
 		}
 	}
 
@@ -317,7 +323,5 @@ class Dsr_controller extends CI_Controller
 	{
 		$this->load->view('dsr/display_dept_dsr');
 		$this->load->model('Dsr_model');
-
-
 	}
 }
